@@ -158,6 +158,8 @@ Concluye el desarrollo de las tablas en la capa de plata.
 
 **Big Query**
 
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/BigQuery.png)
+
 La última etapa se realizó casi en su totalidad den bigquery, salvo por necesidades se modificaron las tablas para aprovechar más los datos. Para armar la capa de oro, voy a seguir la estructura del modelo de datos, con las tablas de hechos y las tablas de dimensiones correspondientes.
 
 **QUERY para agregar lo ID para crear las tablas de dimensiones:**
@@ -303,6 +305,12 @@ ORDER BY FECHA DESC
 Surge de la necesidad de separa las facturas de cada artículo que se vendio en cada una. Distorsionaba los datos y no permitía calcular correctamente los montos por local, ni las unidades de cada artículo que se vendían.
 
 **PowerQuery**
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/PowerQuery.png)
+
+Al terminar la etapa en BigQuery, necesite agregar ciertas columnas a algunas dimensiones para poder segmentar mejor los datos y darles una mejor visualización.
+
+
 
 
 
