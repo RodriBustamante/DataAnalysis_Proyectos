@@ -41,6 +41,22 @@ A medida que fui progresando en el desarrollo y probando como daban los datos, c
 
 ![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/Modelo%20de%20Datos.png)
 
+## ETL
+
+### BRONZE LAYER
+
+Las tablas iniciales son tomadas del sistema de Punto de Venta de los locales de Grisino Jujuy, Salta y Tucumán. Las mismas contienen datos en una venta de tiempo de entre un año para el caso de AVM y de más de 10 años para el caso de Stock. Las columnas que pertenecen a estas tablas son:
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/ETL/Bronze_Layer.png)
+
+En total tengo dos informes AVM separados, por la limitación de descarga en el software de la empresa. El primer informe contiene las transacciones de Tucumán y Salta, mientras que el último solo las de Jujuy. Además, de otra tabla, voy a sacar los datos de Stock, no porque necesita algo de stock particulamente sino porque de allí puedo sacar la linea de los productos, dato interesante para hacer análisis.
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/ETL/BronzeLayer4)
+
+Entonces debo unir tanto AVM_Jujuy con AVM_SaltaTucuman cómo Stock_Jujuy con Stock_SaltaTucuman, el objetivo es lograr una tabla base que sirva como capa de bronce. A partir de la misma, se realizará la capa de plata con menor granularidad y más enfocado al plan de métricas.
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/ETL/Bronze_Layer3.png)
+
 
 
 
