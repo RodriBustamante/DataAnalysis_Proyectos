@@ -152,9 +152,162 @@ FROM `trabajofinaledvai.Capa_Plata.AVM_Base`
 ORDER BY FECHA DESC, HORA DESC
 ```
 
-Con esto concluiría el desarrollo de las tablas en la capa de plata, ahora queda armar en las tablas de dimensiones y de hechos, en la capa de oro.
+Concluye el desarrollo de las tablas en la capa de plata.
 
 ### GOLD LAYER
+
+**Big Query**
+
+La última etapa se realizó casi en su totalidad den bigquery, salvo por necesidades se modificaron las tablas para aprovechar más los datos. Para armar la capa de oro, voy a seguir la estructura del modelo de datos, con las tablas de hechos y las tablas de dimensiones correspondientes.
+
+**QUERY para agregar lo ID para crear las tablas de dimensiones:**
+
+```sql
+CREATE OR REPLACE TABLE `trabajofinaledvai.Capa_Oro.AVM_GoldLayer` AS
+SELECT
+FACTURA,
+DENSE_RANK() OVER (ORDER BY FECHA, HORA) AS FECHA_ID,
+FECHA,
+HORA,
+NOMBRE_LOCAL,
+DENSE_RANK() OVER (ORDER BY NOMBRE_LOCAL) AS LOCAL_ID,
+DENSE_RANK() OVER (ORDER BY NOMBRE_CLIENTE) AS CLIENTE_ID,
+NOMBRE_CLIENTE,
+DENSE_RANK() OVER (ORDER BY NOMBRE_VENDEDOR) AS VENDEDOR_ID,
+NOMBRE_VENDEDOR,
+DENSE_RANK() OVER (ORDER BY ARTICULO_ID, LINEA_ARTICULO) AS ARTICULO_ID,
+NOMBRE_ARTICULO,
+LINEA_ARTICULO,
+DENSE_RANK() OVER (ORDER BY METODO_PAGO) AS MEDIO_ID,
+METODO_PAGO,
+CANTIDAD_FACTURA,
+IMPORTE_FACTURA
+FROM `trabajofinaledvai.Capa_Plata.AVM_SilverLayer`
+ORDER BY FECHA DESC, HORA DESC
+```
+
+**QUERY para crear la tabla de dimensiones de locales:**
+
+```sql
+CREATE OR REPLACE TABLE `trabajofinaledvai.Capa_Oro.DIM_LOCALES` AS
+SELECT DISTINCT
+LOCAL_ID,
+NOMBRE_LOCAL,
+FROM `trabajofinaledvai.Capa_Oro.AVM_GoldLayer`
+ORDER BY LOCAL_ID ASC
+```
+
+**QUERY para crear la tabla de dimensiones de clientes:**
+
+```sql
+CREATE OR REPLACE TABLE `trabajofinaledvai.Capa_Oro.DIM_CLIENTES` AS
+SELECT DISTINCT
+  CLIENTE_ID,
+  NOMBRE_CLIENTE,
+FROM `trabajofinaledvai.Capa_Oro.AVM_GoldLayer`
+ORDER BY CLIENTE_ID
+```
+
+**QUERY para crear la tabla de dimensiones de artículos:**
+
+```sql
+CREATE OR REPLACE TABLE `trabajofinaledvai.Capa_Oro.DIM_ARTICULOS` AS
+SELECT DISTINCT
+  ARTICULO_ID,
+  NOMBRE_ARTICULO,
+  LINEA_ARTICULO,
+FROM `trabajofinaledvai.Capa_Oro.AVM_GoldLayer`
+ORDER BY ARTICULO_ID ASC
+```
+**QUERY para crear la tabla de dimensiones de vendedor:**
+
+```sql
+CREATE OR REPLACE TABLE `trabajofinaledvai.Capa_Oro.DIM_VENDEDOR` AS
+SELECT DISTINCT
+  VENDEDOR_ID,
+  NOMBRE_VENDEDOR,
+FROM `trabajofinaledvai.Capa_Oro.AVM_GoldLayer`
+ORDER BY VENDEDOR_ID ASC
+```
+
+**QUERY para crear la tabla de dimensiones de tiempo:**
+
+```sql
+CREATE OR REPLACE TABLE `trabajofinaledvai.Capa_Oro.DIM_TIEMPO` AS
+SELECT DISTINCT
+    FECHA_ID,
+    FECHA,
+    HORA,
+    FORMAT_DATE('%B', FECHA) AS MES,
+    CASE
+    WHEN EXTRACT(QUARTER FROM FECHA) = 1 THEN '1er trimestre'
+    WHEN EXTRACT(QUARTER FROM FECHA) = 2 THEN '2do trimestre'
+    WHEN EXTRACT(QUARTER FROM FECHA) = 3 THEN '3er trimestre'
+    WHEN EXTRACT(QUARTER FROM FECHA) = 4 THEN '4to trimestre'
+  END AS QUARTER
+FROM `trabajofinaledvai.Capa_Oro.AVM_GoldLayer`
+ORDER BY FECHA DESC, HORA DESC
+```
+
+**QUERY para crear la tabla de hechos de las transacciones de facturación:**
+
+ ```sql
+CREATE OR REPLACE TABLE `trabajofinaledvai.Capa_Oro.HECHOS_FACTURACION` AS
+SELECT
+FACTURA,
+FECHA_ID,
+LOCAL_ID,
+CLIENTE_ID,
+VENDEDOR_ID,
+ARRAY_AGG(STRUCT(ARTICULO_ID)) AS ARTICULO_ID,
+MEDIO_ID,
+SUM(CANTIDAD_FACTURA) AS CANTIDAD,
+ANY_VALUE(IMPORTE_FACTURA) AS IMPORTE_FACTURA
+FROM `trabajofinaledvai.Capa_Oro.AVM_GoldLayer`
+GROUP BY FACTURA, FECHA_ID, LOCAL_ID,CLIENTE_ID,VENDEDOR_ID,MEDIO_ID
+```
+
+**MODIFICACIÓN DE LA QUERY ANTERIOR, para crear la tabla de hechos de las transacciones de facturación:**
+
+```sql
+CREATE OR REPLACE TABLE `trabajofinaledvai.Capa_Oro.HECHOS_FACTURACION` AS
+SELECT
+FACTURA,
+FECHA_ID,
+LOCAL_ID,
+CLIENTE_ID,
+VENDEDOR_ID,
+ANY_VALUE(ARTICULO_ID) AS ARTICULO_ID,
+ANY_VALUE(MEDIO_ID) AS MEDIO_ID,
+SUM(CANTIDAD_FACTURA) AS CANTIDAD_FACTURA,
+MAX(IMPORTE_FACTURA) AS IMPORTE_FACTURA
+FROM `trabajofinaledvai.Capa_Oro.AVM_GoldLayer`
+GROUP BY FACTURA, FECHA, FECHA_ID, LOCAL_ID, VENDEDOR_ID, CLIENTE_ID
+ORDER BY FECHA DESC
+```
+
+El cambio se debe a que la tabla original tiene un error, en el que tiene varios medios para una misma factura, lo que no corresponde, ya que en situaciones así debería aparecer “varios”. El cambio favorece ya que podemos discriminar correctamente cada factura según su medio de pago y evitar tener montos duplicados.
+
+**QUERY para crear la tabla de hechos de las transacciones de artículos:**
+
+```sql
+CREATE OR REPLACE TABLE `trabajofinaledvai.Capa_Oro.HECHOS_ARTICULOS` AS
+SELECT
+FACTURA,
+ARTICULO_ID,
+CANTIDAD_FACTURA,
+FROM `trabajofinaledvai.Capa_Oro.AVM_GoldLayer`
+ORDER BY FECHA DESC
+```
+
+Surge de la necesidad de separa las facturas de cada artículo que se vendio en cada una. Distorsionaba los datos y no permitía calcular correctamente los montos por local, ni las unidades de cada artículo que se vendían.
+
+**PowerQuery**
+
+
+
+
+
 
 
 
