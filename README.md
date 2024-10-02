@@ -22,6 +22,8 @@ El plan de métricas fue enfocado en obtener la mejor información para que la s
 
 ![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/Plan_Métricas.png)
 
+[Link al Plan](https://docs.google.com/spreadsheets/d/1gcPnxIB98Yn8IsfQwROQ-1OX1a7pq0O_wbsURNq8oJc/edit?usp=sharing)
+
 ## Hipotesis
 
 1. Más del 60% de las ventas son realizadas a clientes fidelizados
@@ -37,7 +39,9 @@ En un inicio el modelo de datos era el siguiente:
 
 A medida que fui progresando en el desarrollo y probando como daban los datos, concluí que los datos relevados en las tablas por DIM_ARTICULOS, generaban ciertos errores, por lo que decídi crear una tabla de hechos relacionada directamente con los artículos. Quedando el modelo de datos de la sigueinte forma:
 
-1[](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/Modelo%20de%20Datos.png)
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/Modelo%20de%20Datos.png)
+
+
 
 
 
