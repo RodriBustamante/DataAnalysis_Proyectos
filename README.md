@@ -365,6 +365,43 @@ A partir de aquí comence con las medidas DAX, para poder verificar las hipotes�
 ![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/DAX/ContarArtículos.png)
 
 
+### Dashboard
+
+**INICIO**
+Esta página está diseñada como la primera interacción del usuario con el dashboard. Muestra de manera clara las ventas distribuidas por mes, permitiendo a los supervisores obtener una visión rápida y precisa de cómo han fluctuado las ventas en un periodo de tiempo específico. Esto facilita la identificación de patrones o tendencias estacionales y brinda una perspectiva inicial del desempeño del negocio.
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/Dashboard/Dashboard.png)
+
+**GENERAL**
+En esta hoja, se presentan los indicadores clave de rendimiento (KPIs) más importantes del negocio. Estos KPIs están diseñados para ofrecer un resumen ejecutivo que permite a la supervisión evaluar de forma rápida las áreas que necesitan atención.
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/Dashboard/Dashboard2.png)
+
+**DETALLE**
+Esta sección profundiza en las ventas a nivel individual, permitiendo un análisis detallado y personalizado del desempeño de cada vendedor o equipo. Se puede visualizar cómo ha evolucionado el rendimiento de cada vendedor a lo largo del tiempo, lo que facilita la identificación de patrones de éxito, áreas de mejora, y diferencias en las estrategias de venta entre ellos. Esta página es fundamental para la gestión del equipo de ventas, ya que ofrece una vista más granular que ayuda a tomar decisiones informadas en términos de reconocimiento o capacitación adicional.
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/Dashboard/Dashboard3.png)
+
+**MEDIOS DE PAGO**
+Esta página está diseñada para mostrar los montos detallados según los diferentes medios de pago utilizados a lo largo del año. Los supervisores pueden analizar la distribución de los pagos por tarjeta, efectivo, transferencias, entre otros. La página también permite aplicar filtros dinámicos para ver los datos en un día específico, un mes determinado, o incluso desglosados por local. 
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/Dashboard/Dashboard4.png)
+
+**CLIENTES**
+En esta hoja se presenta un análisis enfocado en los clientes, mostrando los montos de compras por cliente con mayores montos. Esto facilita el seguimiento de los clientes frecuentes y permite identificar patrones de fidelización. Además, ofrece insights sobre aquellos clientes que podrían necesitar un impulso adicional para volver a comprar.
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/Dashboard/Dashboard5.png)
+
+[Link al Dashboard](https://rodribustamante.github.io/DataAnalysis_Proyectos/REPORTE_GRISINO.html)
+
+## Conclusión
+
+
+
+
+
+
+
 
 
 
