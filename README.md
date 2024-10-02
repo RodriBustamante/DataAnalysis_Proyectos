@@ -1,5 +1,8 @@
 # Desarrollo de un Dashboard de Ventas para Supervisión de Locales Retail
 
+## Índice
+
+
 ## Introducción
 
 En el desarrollo de este proyecto, la elección de la fuente de datos fue fundamental. Opté por utilizar información interna del negocio en el que trabajo, ya que contenía datos altamente valiosos que, hasta el momento, no se estaban aprovechando. Esta información sin uso es crucial porque está directamente relacionada con las ventas, un aspecto central para la operación de cualquier comercio. El análisis va desde las ventas totales hasta la evaluación del desempeño individual de cada vendedora en el local.
@@ -396,8 +399,23 @@ En esta hoja se presenta un análisis enfocado en los clientes, mostrando los mo
 
 ## Conclusión
 
+1. Más del 60% de las ventas son realizadas a clientes fidelizados
+- Se pudo verificar que ningúno de los locales cumplia con este KPI fundamental, las estrategias para fidelizar se deben poner en marcha, ya que de no ser así pueden perderse clientes potenciales.
+  
+2. Los equipos muestran una tendencia positiva en los KPI fundamentales (u/tkt y tkt promedio)
+- Grisino Jujuy y Grisino Tucumán, no muestran ninguna tendencia en particular, más bien tienen un ida y vuelta sobre los mismos valores. Es fundamental revisar semana a semana, para poder apuntar al crecimeinto
+- Grisino Salta, en cambio, muestra un gran crecimiento en la productividad.
+  
+3. Los horarios en los que más se vende es entre las 20:00hs y las 22:00hs
+- Se pudo verificar que el rango horario con más venta es de 18:00 a 20:00 y en segundo lugar el horario planteado en la hipotesis. Esto quiere decir que, a la hora de reforzar el equipo de ventas debemos apuntar en esos horarios.
+  
+4. El medio de pago más utilizado es tarjeta
+- Pudo verificarse dicha afirmación, por lo tanto, es importante tener un seguimiento de control de las tarjetas y del costo financiero que implican. Al ser el medio de pago más usado, tener claro los pros y cons es fundamental.
 
+## Links
 
+[Link al Plan](https://docs.google.com/spreadsheets/d/1gcPnxIB98Yn8IsfQwROQ-1OX1a7pq0O_wbsURNq8oJc/edit?usp=sharing)
+[Link al Dashboard](https://rodribustamante.github.io/DataAnalysis_Proyectos/REPORTE_GRISINO.html)
 
 
 
