@@ -338,6 +338,32 @@ La query que utilice fue la siguiente:
 
 ![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/ETL/Gold_LayerPQ6.png)
 
+## Desarrollo del Dashboard de Ventas para la Supervisión
+
+A partir de aquí comence con las medidas DAX, para poder verificar las hipotesís y siguiendo el plan de métricas.
+
+*Suma de los importes de cada transacción realizada en los puntos de venta*
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/DAX/SumImporte.png)
+
+*Cálculo de las unidades vendidas por cada factura*
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/DAX/Productividad.png)
+
+*Cálculo del ticket promedio, que es el importe total sobre las facturas emitidas*
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/DAX/TKTpromedio.png)
+
+*Suma de la cantidad de Grisino Fan y NN para determinar el porcentaje de clientes fidelizados*
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/DAX/SumGrisinoFan.png)
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/DAX/SumNN.png)
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/DAX/%GrisinoFan.png)
+
+*Suma de la cantidad de articulos vendidos por factura*
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/DAX/ContarArtículos.png)
+
 
 
 
