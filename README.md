@@ -2,14 +2,14 @@
 
 ## Índice
 
-1. [Introducción](##introducción)
-2. [Fuente de Datos](##fuente-de-datos)
-3. [Plan de Métricas](##plan-de-métricas)
-4. [Hipótesis](##hipotesis)
-5. [Modelo de Datos](##modelo-de-datos)
-6. [ETL](##ETL)
-7. [Dashboard](##dashboard)
-8. [Conclusión](##conclusión)
+1. [Introducción](#introducción)
+2. [Fuente de Datos](#fuente-de-datos)
+3. [Plan de Métricas](#plan-de-métricas)
+4. [Hipótesis](#hipotesis)
+5. [Modelo de Datos](#modelo-de-datos)
+6. [ETL](#ETL)
+7. [Dashboard](#dashboard)
+8. [Conclusión](#conclusión)
 
 ## Introducción
 
