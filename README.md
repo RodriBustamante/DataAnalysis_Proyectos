@@ -10,9 +10,10 @@ La fuente de datos utilizada en este análisis proviene de los puntos de venta d
 
 En un inicio dos tablas como fuentes de datos, basadas en los puntos de venta de cada local.
 
-*Análisis de Venta Minorista*
+**Análisis de Venta Minorista**
 
 ![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/ETL/Bronze_Layer2.png)
+
 Esta fuente de datos, tiene todas las transacciones de los puntos de venta de cada local, con datos asociados fundamentales para el análisis de ventas y financiero.
 
 ## Plan de Métricas
@@ -27,6 +28,18 @@ El plan de métricas fue enfocado en obtener la mejor información para que la s
 2. Los equipos muestran una tendencia positiva en los KPI fundamentales (u/tkt y tkt promedio)
 3. Los horarios en los que más se vende es entre las 20:00hs y las 22:00hs
 4. El medio de pago más utilizado es tarjeta
+
+## Modelo de Datos
+
+En un inicio el modelo de datos era el siguiente:
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/Modelo%20de%20Datos.png)
+
+A medida que fui progresando en el desarrollo y probando como daban los datos, concluí que los datos relevados en las tablas por DIM_ARTICULOS, generaban ciertos errores, por lo que decídi crear una tabla de hechos relacionada directamente con los artículos. Quedando el modelo de datos de la sigueinte forma:
+
+1[](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/Modelo%20de%20Datos.png)
+
+
 
 
 
