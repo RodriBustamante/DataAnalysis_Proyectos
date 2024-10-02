@@ -3,6 +3,13 @@
 ## Índice
 
 1. [Introducción](##introducción)
+2. [Fuente de Datos](##fuente-de-datos)
+3. [Plan de Métricas](##plan-de-métricas)
+4. [Hipótesis](##hipotesis)
+5. [Modelo de Datos](##modelo-de-datos)
+6. [ETL](##ETL)
+7. [Dashboard](##dashboard)
+8. [Conclusión](##conclusión)
 
 ## Introducción
 
@@ -28,7 +35,7 @@ El plan de métricas fue enfocado en obtener la mejor información para que la s
 
 [Link al Plan](https://docs.google.com/spreadsheets/d/1gcPnxIB98Yn8IsfQwROQ-1OX1a7pq0O_wbsURNq8oJc/edit?usp=sharing)
 
-## Hipotesis
+## Hipótesis
 
 1. Más del 60% de las ventas son realizadas a clientes fidelizados
 2. Los equipos muestran una tendencia positiva en los KPI fundamentales (u/tkt y tkt promedio)
