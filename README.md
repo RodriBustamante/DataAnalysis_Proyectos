@@ -11,6 +11,7 @@ La fuente de datos utilizada en este análisis proviene de los puntos de venta d
 En un inicio dos tablas como fuentes de datos, basadas en los puntos de venta de cada local.
 
 *Análisis de Venta Minorista*
+
 ![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/ETL/Bronze_Layer2.png)
 Esta fuente de datos, tiene todas las transacciones de los puntos de venta de cada local, con datos asociados fundamentales para el análisis de ventas y financiero.
 
