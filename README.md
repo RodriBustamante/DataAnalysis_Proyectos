@@ -10,6 +10,30 @@ La fuente de datos utilizada en este análisis proviene de los puntos de venta d
 
 En un inicio dos tablas como fuentes de datos, basadas en los puntos de venta de cada local.
 
+*Análisis de Venta Minorista*
 ![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/ETL/Bronze_Layer2.png)
+Esta fuente de datos, tiene todas las transacciones de los puntos de venta de cada local, con datos asociados fundamentales para el análisis de ventas y financiero.
+
+## Plan de Métricas
+
+El plan de métricas fue enfocado en obtener la mejor información para que la supervisión pueda corroborar la productividad en ventas de cada equipo.
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/Plan_Métricas.png)
+
+## Hipotesis
+
+1. Más del 60% de las ventas son realizadas a clientes fidelizados
+2. Los equipos muestran una tendencia positiva en los KPI fundamentales (u/tkt y tkt promedio)
+3. Los horarios en los que más se vende es entre las 20:00hs y las 22:00hs
+4. El medio de pago más utilizado es tarjeta
+
+
+
+
+
+
+
+
+
 
 
