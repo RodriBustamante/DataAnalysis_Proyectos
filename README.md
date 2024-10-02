@@ -2,6 +2,7 @@
 
 ## Índice
 
+1. [Introducción](##introducción)
 
 ## Introducción
 
