@@ -43,7 +43,11 @@ A medida que fui progresando en el desarrollo y probando como daban los datos, c
 
 ## ETL
 
-### BRONZE LAYER
+**Data Flow**
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/DataFlow.png)
+
+### Bronze Layer
 
 Las tablas iniciales son tomadas del sistema de Punto de Venta de los locales de Grisino Jujuy, Salta y Tucumán. Las mismas contienen datos en una venta de tiempo de entre un año para el caso de AVM y de más de 10 años para el caso de Stock. Las columnas que pertenecen a estas tablas son:
 
@@ -154,7 +158,7 @@ ORDER BY FECHA DESC, HORA DESC
 
 Concluye el desarrollo de las tablas en la capa de plata.
 
-### GOLD LAYER
+### Gold Layer
 
 **Big Query**
 
@@ -309,6 +313,32 @@ Surge de la necesidad de separa las facturas de cada artículo que se vendio en 
 ![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/PowerQuery.png)
 
 Al terminar la etapa en BigQuery, necesite agregar ciertas columnas a algunas dimensiones para poder segmentar mejor los datos y darles una mejor visualización.
+
+**Agregar nombre de Grisino Fan a la tabla de dimension de clientes**
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/ETL/Gold_LayerPQ.png)
+
+Agregue según las siguientes condiciones la columna de grisino fan
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/ETL/Gold_LayerPQ2.png)
+
+**Agregar una segmentación de medios de pago para poder entender más a nivel macro**
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/ETL/Gold_LayerPQ3.png)
+
+Lo hice de manera manual, ya que era muy difícil distinguir cada uno
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/ETL/Gold_LayerPQ4.png)
+
+**Agregar datos a la tabla calendario, como la segmentación de horas, para obtener datos más fáciles de leer de la actividad**
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/ETL/Gold_LayerPQ5.png)
+
+La query que utilice fue la siguiente:
+
+![](https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/ETL/Gold_LayerPQ6.png)
+
+
 
 
 
