@@ -10,5 +10,6 @@ La fuente de datos utilizada en este análisis proviene de los puntos de venta d
 
 En un inicio dos tablas como fuentes de datos, basadas en los puntos de venta de cada local.
 
+![alt text] (https://github.com/RodriBustamante/DataAnalysis_Proyectos/blob/main/imagenes/ETL/Bronze_Layer2.png)
 
 
